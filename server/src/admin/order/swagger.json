@@ -1,0 +1,99 @@
+{
+  "paths": {
+    "/update_order": {
+      "post": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Update Order",
+        "description": "Update Order",
+        "operationId": "update_order",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/update_order"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/update_order"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/list_order": {
+      "get": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "list all Order",
+        "description": "list all Order",
+        "operationId": "list_order",
+        "responses": {}
+      }
+    },
+    "/delete_order": {
+      "delete": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete Order",
+        "description": "Delete Order",
+        "operationId": "delete_order",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": false
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "schemas": {
+    "update_order": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "delete_order": {
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

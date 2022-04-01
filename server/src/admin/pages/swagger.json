@@ -1,0 +1,69 @@
+{
+    "paths": {
+        "/update_pages": {
+            "post": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Add Update pages",
+                "description": "Add Update pages",
+                "operationId": "update_pages",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref":"#/components/schemas/update_pages"
+                            }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "$ref":"#/components/schemas/update_pages"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {}
+            }
+        },
+        "/list_pages": {
+            "get": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "list all Pages",
+                "description": "list all Pages",
+                "operationId": "list_pages",
+                "responses": {}
+            }
+        }
+    },
+    "schemas": {
+        "update_pages":{
+            "type": "object",
+            "required": [],
+            "properties":{
+                "aboutUs":{
+                    "type": "string"
+                },
+                "terms":{
+                    "type": "string"
+                },
+                "privacyPolicy":{
+                    "type": "string"
+                }
+            }
+        }
+
+    }
+}

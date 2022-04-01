@@ -1,0 +1,168 @@
+{
+    "paths":
+    {
+        "/add_update_user": {
+            "post": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Add Update User",
+                "description": "Add Update User",
+                "operationId": "add_update_user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/add_update_user"
+                            }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/add_update_user"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {}
+            }
+        },
+        "/list_users": {
+            "get": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "list all Users",
+                "description": "list all users",
+                "operationId": "list_users",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "description": "search keyword",
+                        "schema":{
+                            "type": "string"
+                          
+                        },
+                        "required": false
+                    }
+                ]
+            }
+        },
+        "/active_inactive":{
+            "get": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Active Inactive Users",
+                "description": "Active Inactive Users",
+                "operationId": "active_inactive_users",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "description": "id",
+                        "schema":{
+                            "type": "string"
+                          
+                        },
+                        "required": false
+                    }
+                ]
+            }
+        },
+        "/delete_users": {
+            "delete": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Delete Users",
+                "description": "Delete Users",
+                "operationId": "delete_users",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "description": "id",
+                        "schema":{
+                            "type": "string"
+                          
+                        },
+                        "required": false
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+
+    "schemas": {
+        
+        "add_update_user": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "object",
+                    "properties": {
+                        "original": {
+                            "type": "string"
+                        },
+                        "thumbnail": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "coverImage": {
+                    "type": "object",
+                    "properties": {
+                        "original": {
+                            "type": "string"
+                        },
+                        "thumbnail": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

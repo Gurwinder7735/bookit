@@ -1,0 +1,107 @@
+{
+  "paths": {
+    "/add_update_banner": {
+      "post": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Add Update Banner",
+        "description": "Add Update Banner",
+        "operationId": "add_update_banner",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/add_update_category"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/add_update_banner"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/list_banner": {
+      "get": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "list all Banner",
+        "description": "list all Banner",
+        "operationId": "list_banner",
+        "responses": {}
+      }
+    },
+    "/delete_banner": {
+      "delete": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete Banner",
+        "description": "Delete Banner",
+        "operationId": "delete_banner",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": false
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "schemas": {
+    "add_update_banner": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "original": {
+              "type": "string"
+            },
+            "thumbnail": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "delete_banner": {
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

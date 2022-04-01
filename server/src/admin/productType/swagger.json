@@ -1,0 +1,143 @@
+{
+  "paths": {
+    "/add_update_productType": {
+      "post": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Add Update productType",
+        "description": "Add Update productType",
+        "operationId": "add_update_productType",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/add_update_productType"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/add_update_productType"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/list_productType": {
+      "get": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "list all productType",
+        "description": "list all productType",
+        "operationId": "list_productType",
+        "responses": {}
+      }
+    },
+    "/delete_productType": {
+      "delete": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete productType",
+        "description": "Delete productType",
+        "operationId": "delete_productType",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": false
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/update_productType_status": {
+      "post": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Update update_productType_status",
+        "description": "update_productType_status Order",
+        "operationId": "update_productType_status",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/update_productType_status"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/update_productType_status"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {}
+      }
+    }
+  },
+  "schemas": {
+    "add_update_productType": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "original": {
+              "type": "string"
+            },
+            "thumbnail": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "update_productType_status": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

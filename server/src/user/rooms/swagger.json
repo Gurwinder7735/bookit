@@ -1,0 +1,55 @@
+{
+  "paths":
+  {
+      
+      "/userprofle": {
+          "post": {
+              "tags": [
+                  "User APIs"
+              ],
+              "summary": "userprofle",
+              "description": "userprofle",
+              "operationId": "userprofle",
+              "requestBody": {
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "$ref": "#/components/schemas/userprofle"
+                          }
+                      },
+                      "application/xml": {
+                          "schema": {
+                              "$ref": "#/components/schemas/userprofle"
+                          }
+                      }
+                  },
+                  "required": true
+              },
+              "responses": {}
+          }
+      }
+  },
+
+  "schemas": 
+  {
+    "userprofle": {
+        "type": "object",
+        "required": [],
+        "properties": {
+            "country_code": {
+                "type": "string"
+            },
+            "phone": {
+                "type": "string"
+            },
+            "device_token": {
+                "type": "string"
+            },
+            "device_type": {
+                "type": "number"
+            }
+        }
+    }
+    
+  }
+}

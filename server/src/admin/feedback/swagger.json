@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "/list_feedback": {
+      "get": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "list all Feedback",
+        "description": "list all Feedback",
+        "operationId": "list_feedback",
+        "responses": {}
+      }
+    },
+    "/delete_feedback": {
+      "delete": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete Feedback",
+        "description": "Delete Feedback",
+        "operationId": "delete_feedback",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": false
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "schemas": {
+    "delete_feedback": {
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "paths": {
+    "/add_update_promo": {
+      "post": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Add Update Promo",
+        "description": "Add Update Promo",
+        "operationId": "add_update_promo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/add_update_promo"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/add_update_promo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {}
+      }
+    },
+    "/list_promo": {
+      "get": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "list all Promo",
+        "description": "list all Promo",
+        "operationId": "list_promo",
+        "responses": {}
+      }
+    },
+    "/delete_promo": {
+      "delete": {
+        "tags": [
+          "Admin APIs"
+        ],
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "summary": "Delete Category",
+        "description": "Delete Category",
+        "operationId": "delete_promo",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": false
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "schemas": {
+    "add_update_promo": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "type": {
+          "type": "number"
+        },
+        "amount": {
+          "type": "string"
+        },
+        "minOrderTotal": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        }
+      }
+    },
+    "delete_promo": {
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

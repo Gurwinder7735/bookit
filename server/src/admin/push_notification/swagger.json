@@ -1,0 +1,94 @@
+{
+    "paths":
+    {
+        
+        "/add_update_pushnotf": {
+            "post": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Add Update Push Notification",
+                "description": "Add Update Push Notification",
+                "operationId": "add_update_pushnotf",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/add_update_pushnotf"
+                            }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/add_update_pushnotf"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {}
+            }
+        },
+
+        "/list_pushnotf": {
+            "get": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "List Push Notification",
+                "description": "List Push Notification",
+                "operationId": "list_push_notification",
+                "responses": {}
+            }
+        },
+        "/delete_pushnotf": {
+            "post": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "Delete Push Notification",
+                "description": "Delete Push Notification",
+                "operationId": "delete_push_notification",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "description": "id",
+                        "schema":{
+                            "type": "string"
+                            
+                        },
+                        "required": false
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+
+    "schemas": {
+        "add_update_pushnotf": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

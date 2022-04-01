@@ -1,0 +1,107 @@
+{
+	"paths": {
+		"/add_update_mood": {
+			"post": {
+				"tags": [
+					"Admin APIs"
+				],
+				"security": [
+					{
+						"Bearer": []
+					}
+				],
+				"summary": "Add Update Moods",
+				"description": "Add Update Moods",
+				"operationId": "add_update_mood",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/add_update_mood"
+							}
+						},
+						"application/xml": {
+							"schema": {
+								"$ref": "#/components/schemas/add_update_mood"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {}
+			}
+		},
+		"/list_moods": {
+			"get": {
+				"tags": [
+					"Admin APIs"
+				],
+				"security": [
+					{
+						"Bearer": []
+					}
+				],
+				"summary": "list all Moods",
+				"description": "list all Moods",
+				"operationId": "list_moods",
+				"responses": {}
+			}
+		},
+		"/delete_moods": {
+			"post": {
+				"tags": [
+					"Admin APIs"
+				],
+				"security": [
+					{
+						"Bearer": []
+					}
+				],
+				"summary": "Delete Moods",
+				"description": "Delete Moods",
+				"operationId": "delete_moods",
+				"parameters": [
+					{
+						"in": "query",
+						"name": "id",
+						"description": "id",
+						"schema": {
+							"type": "string"
+						},
+						"required": false
+					}
+				],
+				"responses": {}
+			}
+		}
+	},
+	"schemas": {
+		"add_update_mood": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"image": {
+					"type": "object",
+					"properties": {
+						"original": {
+							"type": "string"
+						},
+						"thumbnail": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		},
+		"delete_mood": {
+			"properties": {
+				"id": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}

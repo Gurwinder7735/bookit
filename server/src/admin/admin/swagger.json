@@ -1,0 +1,158 @@
+{
+    "paths":
+    {
+        
+        "/login": {
+            "post": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "summary": "login123 user",
+                "description": "login123 user",
+                "operationId": "login123",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Login"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {}
+            }
+        },
+        
+        "/edit_profile": {
+            "post": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "edit_profile user",
+                "description": "edit_profile user",
+                "operationId": "edit_profile",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/edit_profile"
+                            }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/edit_profile"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {}
+            }
+        },
+        "/change_password": {
+            "post": {
+                "tags": [
+                    "Admin APIs"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "summary": "change_password",
+                "description": "change password",
+                "operationId": "change password",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/change_password"
+                            }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/change_password"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {}
+            }
+        }
+    },
+
+    "schemas": {
+        "Login": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "device_token": {
+                    "type": "string"
+                },
+                "device_type": {
+                    "type": "number"
+                }
+            }
+        },
+        "edit_profile": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "object",
+                    "properties": {
+                        "original": {
+                            "type": "string"
+                        },
+                        "thumbnail": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "phone":{
+                    "type":"string"
+                },
+                "countryCode":{
+                    "type":"string"
+                }
+                
+            }
+        },
+        "change_password": {
+            "type": "object",
+            "required": [],
+            "properties": {
+                "password":{
+                    "type":"string"
+                },
+                "new_password":{
+                    "type":"string"
+                },
+                "confirm_password":{
+                    "type":"string"
+                }
+            }
+        }
+    }
+}
