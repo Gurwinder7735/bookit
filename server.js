@@ -55,7 +55,7 @@ app.prepare().then(() => {
   server.get('*', (req, res) => {
     return handle(req, res);
   });
-
+ 
   server.use(function (err, req, res, next) {
     console.log("errr----");
     let status = 500, json = {

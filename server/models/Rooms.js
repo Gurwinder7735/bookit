@@ -106,12 +106,10 @@ const roomSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: 'User',
         required: false
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
     }
 
+},{
+    timestamps: true
 })
 
 module.exports = mongoose.models.Room || mongoose.model('Room', roomSchema);

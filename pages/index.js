@@ -1,12 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import Home from '../components/Home'
+import Layout from '../components/Layouts/Layout'
+import { getAllRooms } from '../redux/actions/roomActions'
+import { wrapper } from '../redux/store'
+
+export default function Index() {
   return (
-    <div className={styles.container}>
-      <h1>Next Js</h1>
+    <Layout>
+        <Home/>
+    </Layout>
  
-    </div>
   )
 }
+
+export const getServerSideProps = wrapper.getServerSideProps(store => async ({ req }) => {
+  await store.dispatch(getAllRooms(req))
+})
