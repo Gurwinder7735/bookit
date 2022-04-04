@@ -3,7 +3,7 @@ import { allRoomsReducer } from "./roomReducer";
 
 
 const reducers = combineReducers({
-    allRoomsReducer
+    rooms: allRoomsReducer 
 })
 
 export default reducers
