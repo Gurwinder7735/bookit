@@ -49,7 +49,7 @@ module.exports =
             this.query.limit(resPerPage).skip(skip);
 
             return this
-        }
+        }cl
 
     }
  
