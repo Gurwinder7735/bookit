@@ -9,7 +9,7 @@ module.exports = {
   getRooms: async (req, res) => {
     try {
 
-       const apiFeatures = new APIFeatures(Rooms.find(), req.query).search()
+       const apiFeatures = new APIFeatures(Rooms.find(), req.query).search().filter().pagination(1)
    
      let rooms = await apiFeatures.query;
 

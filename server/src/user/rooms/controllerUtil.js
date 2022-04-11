@@ -25,6 +25,32 @@ module.exports =
 
 
         }
+
+        filter(){
+
+            const queryCopy = { ...this.queryStr }
+
+            // remove fields from query
+            const removeFields = ['location']
+
+            removeFields.forEach(e => delete queryCopy[e]);
+
+            this.query = this.query.find(queryCopy);
+            return this
+
+        }
+
+        pagination(resPerPage){
+
+            const currentPage = Number(this.queryStr.page) || 1
+            const skip = resPerPage * (currentPage - 1)
+
+            console.log('currentPage', currentPage)
+            this.query.limit(resPerPage).skip(skip);
+
+            return this
+        }
+
     }
  
 ;
