@@ -9,12 +9,27 @@ module.exports = {
   getRooms: async (req, res) => {
     try {
 
-       const apiFeatures = new APIFeatures(Rooms.find(), req.query).search().filter().pagination(1)
+      const resPerPage = 4;
+      const roomsCount = await Rooms.countDocuments();
+
+      const apiFeatures = new APIFeatures(Rooms.find(), req.query).search().filter()
    
      let rooms = await apiFeatures.query;
+     let filteredRoomsCount = rooms.length
+
+     apiFeatures.pagination(resPerPage)
+     rooms = await apiFeatures.query.clone();
 
      if(rooms){
-       return sendSuccess(res,'Get rooms success!',{rooms,roomsCount: rooms.length})
+       return sendSuccess(res,'Get rooms success!',
+       {
+        
+        roomsCount,
+         resPerPage,
+         filteredRoomsCount ,
+         rooms,
+       }
+       )
      }
 
 
