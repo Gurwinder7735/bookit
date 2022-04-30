@@ -9,7 +9,7 @@ module.exports = {
   getRooms: async (req, res) => {
     try {
 
-      const resPerPage = 4;
+      const resPerPage = 10;
       const roomsCount = await Rooms.countDocuments();
 
       const apiFeatures = new APIFeatures(Rooms.find(), req.query).search().filter()

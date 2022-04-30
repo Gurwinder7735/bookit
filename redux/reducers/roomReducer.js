@@ -1,7 +1,8 @@
 import * as roomConstants from '../constants/roomConstants'
 
 const initialState = {
-    rooms : []
+    rooms : [],
+    error: ''
 }
 
 export const allRoomsReducer = (state = initialState,action)=>{

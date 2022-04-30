@@ -23,7 +23,7 @@ const sendSuccess = function (res,message = 'Success!',data={}) {
 const sendError = function (res,message,data={}) {
     try{
 
-        return res.status(200).json({
+        return res.status(500).json({
             success: false,
             stausCode: 500,
             message,
