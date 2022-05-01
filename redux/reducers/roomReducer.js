@@ -31,3 +31,28 @@ export const allRoomsReducer = (state = initialState,action)=>{
     }
 
 }
+
+
+export const roomDetailsReducer = (state = {room : {}},action)=>{
+
+    switch (action.type) {
+        case roomConstants.ROOM_DETAILS_SUCCESS:
+            return {
+                room: action.payload.room,
+            }
+        case roomConstants.ROOM_DETAILS_FAILED :
+            return {
+                error: action.payload
+            }
+
+        case roomConstants.CLEAR_ERRORS :
+            return {
+                ...state,
+                error: null
+            }
+    
+        default:
+            return state
+    }
+
+}

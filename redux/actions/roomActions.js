@@ -19,6 +19,23 @@ export const getAllRooms = (req) => async (dispatch) => {
     }
 
 }
+export const getSingleRoom = (req,id) => async (dispatch) => {
+
+    try {
+
+        const { origin } = absoluteUrl(req)
+
+        const { data } = await axios.get(`${origin}/api/rooms/${id}`)
+
+        console.log(data)
+        dispatch(roomDetailsSuccess(data.data))
+
+
+    } catch (err) {
+        dispatch(roomDetailsFailed(err.response.data.message))
+    }
+
+}
 
 const allRoomsFailed = (payload) => ({
     type: roomConstants.ALL_ROOMS_FAILED,
@@ -27,6 +44,16 @@ const allRoomsFailed = (payload) => ({
 
 const allRoomsSuccess = (payload) => ({
     type: roomConstants.ALL_ROOMS_SUCCESS,
+    payload
+})
+
+const roomDetailsFailed = (payload) => ({
+    type: roomConstants.ROOM_DETAILS_FAILED,
+    payload
+})
+
+const roomDetailsSuccess = (payload) => ({
+    type: roomConstants.ROOM_DETAILS_SUCCESS,
     payload
 })
 
